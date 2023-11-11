@@ -1,0 +1,170 @@
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  list-style: none
+  text-decoration: none
+  font-family: 'Quicksand', sans-serif
+
+$text-color: #fff
+$bg-color: #cd5905
+$main-color: #f79021
+$other-color: #302b18
+
+$h1-font: 4.5rem
+$h1-font-sm: 3.5rem
+
+:root
+  --h1-font: 4.5rem
+
+body
+  color: $text-color
+  background: $bg-color
+
+header
+  position: fixed
+  width: 100%
+  top: 0
+  right: 0
+  background: transparent
+  z-index: 1000
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 25px 12%
+  transition: all 0.5s ease
+
+.logo
+  img
+    width: 100%
+    height: auto
+
+.navlist
+  display: flex
+  a
+    margin: 0 28px
+    color: $text-color
+    font-size: 17px
+    font-weight: 500
+    transition: all 0.5s ease
+    &:hover
+      color: $main-color
+
+.nav-right
+  display: flex
+  align-items: center
+
+.o-btn
+  display: inline-block
+  padding: 14px 32px
+  background: $main-color
+  color: $other-color
+  font-size: 14px
+  font-weight: 600
+  border-radius: 13px
+  box-shadow: $main-color 0 2px 30px
+  margin-right: 25px
+  transition: all 0.5s ease
+  &:hover
+    transform: scale(1.06) translateY(3px)
+
+#menu-icon
+  font-size: 42px
+  z-index: 10001
+  cursor: pointer
+  display: none
+
+section
+  padding: 0 12%
+
+.hero
+  position: relative
+  width: 100%
+  height: 100vh
+  // background: #000
+  background-size: cover
+  background-position: center
+
+.main-content
+  padding-top: 240px
+  h1
+    font-family: "Outfit", sans-serif
+    font-size: var(--h1-font)
+    line-height: 1.1
+    font-weight: 800
+    margin-bottom: 15px
+  p
+    width: 650px
+    max-width: 100%
+    line-height: 2
+    font-size: 16px
+    font-weight: 500
+    margin-bottom: 35px
+
+.btn1
+  @extend .o-btn
+  display: inline-block
+  padding: 14px 32px
+  background: $main-color
+  &:hover
+    transform: scale(1.06) translateY(-5px)
+
+.btn2
+  @extend .btn1
+  background: $other-color
+  border: 2px solid $main-color
+  color: $text-color
+  margin-left: 8px
+  &:hover
+    background: transparent
+
+.social-icons
+  position: absolute
+  bottom: 0
+  left: 12%
+  i
+    display: inline-block
+    color: $text-color
+    margin-right: 25px
+    font-size: 24px
+    transition: all 0.5s ease
+    &:hover
+      transform: scale(1.08) translateY(-8px)
+
+@media(max-width: 870px)
+  :root
+    --h1-font: 3.5rem
+  .main-content p
+    font-size: 15px
+  .nav-list a
+    font-size: 15px
+  .o-btn,.btn1,.btn2
+    padding: 10px 22px
+
+@media(max-width: 750px)
+  #menu-icon
+    display: block
+  .navlist
+    position: absolute
+    height: 100vh
+    width: 100%
+    padding: 70px 60px
+    top: 0
+    right: 0
+    bottom: 0
+    left: 100%
+    display: flex
+    flex-direction: column
+    backdrop-filter: blur(40px)
+    transition: all 0.6s ease-in-out
+    a
+      display: block
+      padding: 0
+      margin: 0 0 23px 0
+      font-size: 2.1rem
+    &.open
+      left: 0
+
+@media(max-width: 550px)
+  :root
+    --h1-font: 3rem
